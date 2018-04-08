@@ -23,8 +23,8 @@
     final Integer MAX = 40;
 
     final IntFunction<String> action = number -> {
-        Boolean isStupid = (number % 3 == 0 || String.valueOf(number).contains("3"));
-        Boolean isDog = (number % 5 == 0);
+        final Boolean isStupid = (number % 3 == 0 || String.valueOf(number).contains("3"));
+        final Boolean isDog = (number % 5 == 0);
 
         final Map<String, String> messages = new HashMap<String, String>() {
             {
@@ -43,7 +43,7 @@
                 : "");
     };
 
-    for (Integer number : IntStream.rangeClosed(MIN, MAX).toArray()) {
+    for (final Integer number : IntStream.rangeClosed(MIN, MAX).toArray()) {
         out.print(number + action.apply(number) + "<br>");
     }
 %>
